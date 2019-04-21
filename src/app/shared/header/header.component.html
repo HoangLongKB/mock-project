@@ -1,0 +1,55 @@
+<div class="top-header ">
+  <div class="container">
+    <div class="row">
+      <div class="left col-md-6 col-sm-12 ">
+        <img class="logo-center" src="assets/images/busy-logo.png" alt="logo" width="100px" height="100px">
+      </div>
+      <div class="right col-md-6 col-sm-12 d-flex flex-column justify-content-center">
+        <div class="row d-lex flex-row justify-content-between">
+          <div class="contact d-flex flex-row justify-content-around align-items-center">
+            <mat-icon class="mr-3 ">mail</mat-icon>
+            <a href="#!" class="">contact@busy.com</a>
+          </div>
+          <div class="login-toggle d-flex flex-row justify-content-between">
+            <mat-icon class="account-icon">account_circle</mat-icon>
+            <div class="login-button-container ml-3">
+                <button mat-button [matMenuTriggerFor]="menu" class="login-button clear-button p-0">Sign In | Sign Up</button>
+                <div class="">Account</div>
+            </div>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item class="clear-button">Sign In</button>
+              <button mat-menu-item class="clear-button">Sign Up</button>
+            </mat-menu>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-header row">
+  <nav class="navbar navbar-expand-sm col-md-12">
+    <button (click)="toggleNav()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <mat-icon>reorder</mat-icon>
+    </button>
+
+    <div class="collapse navbar-collapse " [ngClass]=" { 'show': isShow } " id="navbarSupportedContent">
+      <ul class="navbar-nav  mx-auto">
+        <li class="nav-item px-3">
+          <a class="nav-link active" href="!#" (click)="toggleNav()">HOME</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link" href="!#">TRIPS</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link" href="!#">DISCOUNT</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link" href="!#">INFO</a>
+        </li>
+        <li class="nav-item px-4">
+          <a class="nav-link" href="!#">JOBS</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

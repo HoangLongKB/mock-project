@@ -1,0 +1,46 @@
+$main_green: #18aa4f;
+.clear-button {
+  border: none;
+  background-color: white;
+  outline: none;
+}
+
+.top-header {
+  border-bottom: 1px solid #eee;
+  .login-button{
+    &:hover {
+      color: $main_green;
+      cursor: pointer;
+    }
+  }
+  .account-icon {
+    font-size: 36px;
+  }
+
+}
+a {
+  color: black;
+  font-weight: 550;
+  border-bottom: 2px solid transparent;
+  &:active { text-decoration: none }
+  &:hover{ border-bottom: 2px solid $main_green }
+  &:visited{ text-decoration: none }
+  &:link{ text-decoration: none }
+}
+.logo-center{
+  margin: 0;
+}
+
+.bottom-header {
+  margin-right: 0;
+  background-color:  white;
+  border-bottom: 1px solid $main_green;
+  .active {
+    border-bottom: 2px solid $main_green;
+  }
+}
+@media screen and (max-width: 576px) {
+  .logo-center {
+    margin-left: 40%;
+  }
+}

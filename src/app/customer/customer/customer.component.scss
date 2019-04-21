@@ -1,0 +1,13 @@
+.member-card {
+  box-shadow: none;
+  border: 1px solid #ececec;
+  height: 100%;
+}
+.benefit-card{
+  box-shadow: none;
+  .content{
+    h6 {
+      font-weight: 550;
+    }
+  }
+}
