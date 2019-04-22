@@ -1,3 +1,85 @@
+<div class="main-body">
+  <div class="form-container ">
+    <div class="row justify-content-center">
+      <form class="col-md-8 my-5">
+        <div class="row radio-section justify-content-end">
+          <div class="radio-container col-md-4 row">
+            <div class="col-md-6">
+              <input type="radio" name="ticket-type" value="one-way" id="oneWay" checked>
+              <label for="oneWay" class="my-4">One way</label>
+            </div>
+            <div class="col-md-6">
+              <input type="radio" name="ticket-type" value="two-way" id="twoWay">
+              <label for="twoWay" class="my-4">Two way</label>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-3 place-section">
+          <div class="col-md-5 input-from">
+            <div class="row justify-content-center">
+              <label class="from-icon">
+                  <mat-icon>place</mat-icon>
+                   From
+              </label>
+            </div>
+            <div class="row justify-content-center input-form-container">
+              <mat-form-field floatLabel="never">
+                  <input type="text" id="inputFrom" placeholder="Hồ Chí Minh (SNG)" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+            </div>
+          </div>
+          <div class="col-md-2 d-flex flex-row justify-content-center align-items-center">
+            <mat-icon class="rotate-icon">autorenew</mat-icon>
+          </div>
+          <div class="col-md-5 input-to">
+              <div class="row justify-content-center">
+                  <label class="to-icon">
+                      <mat-icon>place</mat-icon>
+                       To
+                  </label>
+                </div>
+                <div class="row justify-content-center input-form-container">
+                  <mat-form-field floatLabel="never"  class="">
+                      <input type="text" id="inputTo" placeholder="Hà Nội (HN)" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                      <mat-autocomplete #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                          {{option}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+          </div>
+        </div>
+        <div class="row date-picker-section">
+          <div class="col-md-6 date-picker-depart py-3 d-flex justify-content-around">
+              <label for="" class="align-self-center m-0">Departure Date</label>
+              <mat-form-field>
+                  <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date" disabled>
+                  <mat-datepicker #picker disabled="false"></mat-datepicker>
+                </mat-form-field>
+                <mat-icon class="align-self-center calendar-icon" (click)="picker.open()">calendar_today</mat-icon>
+          </div>
+          <div class="col-md-6 date-picker-depart py-3 d-flex justify-content-around">
+              <label for="" class="align-self-center m-0">Return Date</label>
+              <mat-form-field>
+                  <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker2" placeholder="Choose a date" disabled>
+                  <mat-datepicker #picker2 disabled="false"></mat-datepicker>
+                </mat-form-field>
+                <mat-icon class="align-self-center calendar-icon" (click)="picker2.open()">calendar_today</mat-icon>
+          </div>
+        </div>
+        <div class="row submit-button justify-content-center">
+          <button class="col-md-3 btn btn-success my-3">FIND BUS</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 <div class="container-fluid">
   <div class="middle-body  row d-flex flex-row justify-content-center">
     <div class="col-md-3 col-12 my-5">
