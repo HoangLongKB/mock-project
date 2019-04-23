@@ -59,7 +59,14 @@
           <div class="col-md-6 date-picker-depart py-3 d-flex justify-content-around">
               <label for="" class="align-self-center m-0">Departure Date</label>
               <mat-form-field>
-                  <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date" disabled>
+                  <input
+                  matInput [matDatepickerFilter]="myFilter"
+                   [matDatepicker]="picker"
+                   [formControl]="dateControl"
+                   (dateChange)="getDateChange($event)"
+                   placeholder="Choose a date"
+                   disabled
+                   >
                   <mat-datepicker #picker disabled="false"></mat-datepicker>
                 </mat-form-field>
                 <mat-icon class="align-self-center calendar-icon" (click)="picker.open()">calendar_today</mat-icon>
@@ -67,7 +74,13 @@
           <div class="col-md-6 date-picker-depart py-3 d-flex justify-content-around">
               <label for="" class="align-self-center m-0">Return Date</label>
               <mat-form-field>
-                  <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker2" placeholder="Choose a date" disabled>
+                  <input
+                  matInput [matDatepickerFilter]="myFilter2"
+                  [matDatepicker]="picker2"
+                  [formControl]="dateControlReturn"
+                  placeholder="Choose a date"
+                  disabled
+                  >
                   <mat-datepicker #picker2 disabled="false"></mat-datepicker>
                 </mat-form-field>
                 <mat-icon class="align-self-center calendar-icon" (click)="picker2.open()">calendar_today</mat-icon>
