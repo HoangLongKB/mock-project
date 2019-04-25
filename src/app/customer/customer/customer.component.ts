@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormControl, FormBuilder, FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-customer',
@@ -10,22 +11,33 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class CustomerComponent implements OnInit {
   options: string[] = ['Hồ Chí Minh (SNG)', 'Hà Nội (HN)', 'Đà Nẵng (DN)'];
-  myControl = new FormControl(this.options[0]);
-  myControlTo = new FormControl(this.options[1]);
   dateControl = new FormControl(new Date());
   dateControlReturn = new FormControl(new Date());
   filteredOptions: Observable<string[]>;
   filteredOptionsTo: Observable<string[]>;
-  fromValue: string = '';
-  toValue: string = '';
+  fromValue = '';
+  toValue = '';
+  busRoutes: FormGroup;
 
-  constructor() {
+  constructor(private formBuilder: FormBuilder, private snackBar: MatSnackBar) {
+    this.busRoutes = this.formBuilder.group({
+      type: [1],
+      places: this.formBuilder.group({
+        from: ['Hồ Chí Minh (SNG)'],
+        to: ['Hà Nội (HN)']
+      }),
+      date: this.formBuilder.group({
+        departure: [new Date()],
+        _return: [new Date()]
+      })
+    });
   }
 
   ngOnInit() {
+
     this.fromValue = this.options[0];
     this.toValue = this.options[1];
-    this.filteredOptions = this.myControl.valueChanges
+    this.filteredOptions = this.busRoutes.get('places').get('from').valueChanges
     .pipe(
       startWith(''),
       map(value => {
@@ -35,7 +47,7 @@ export class CustomerComponent implements OnInit {
         return this._filter(value);
       })
     );
-    this.filteredOptionsTo = this.myControlTo.valueChanges
+    this.filteredOptionsTo = this.busRoutes.get('places').get('to').valueChanges
     .pipe(
       startWith(''),
       map(value => {
@@ -57,8 +69,8 @@ export class CustomerComponent implements OnInit {
     this.fromValue = this.toValue;
     this.toValue = temp;
 
-    this.myControl.setValue(this.fromValue);
-    this.myControlTo.setValue(this.toValue);
+    this.busRoutes.get('places').get('from').setValue(this.fromValue);
+    this.busRoutes.get('places').get('to').setValue(this.toValue);
   }
 
   myFilter = (pickedDate: Date): boolean => {
@@ -85,10 +97,19 @@ export class CustomerComponent implements OnInit {
     }
   }
 
-  clearInputTo(myControlTo: FormControl){
-    myControlTo.setValue('');
+  clearInputTo(){
+    this.busRoutes.get('places').get('to').setValue('');
   }
-  clearInputFrom(myControl: FormControl){
-    myControl.setValue('');
+  clearInputFrom(){
+    this.busRoutes.get('places').get('from').setValue('');
+  }
+  onSubmit({value, valid}) {
+    // alert(JSON.stringify(value));
+    if (value.places.from === value.places.to) {
+      this.snackBar.open('Departure Place and Return Place must be different' ,'Close' ,{
+        duration: 3000,
+        panelClass: ['my-snack']
+      });
+    }
   }
 }

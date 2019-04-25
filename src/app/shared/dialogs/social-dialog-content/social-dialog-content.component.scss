@@ -1,0 +1,37 @@
+$icon-size: 18px;
+$icon-size-google: 26px;
+$icon-color-facebook: #3b5998;
+$icon-color-google: #db3236;
+$button-length: 70%;
+.btn-social-facebook {
+  background: none;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  background-color: $icon-color-facebook;
+  color: white;
+  border-radius: 35px;
+  width: $button-length;
+  &:focus {
+    outline: none;
+  }
+  img {
+    width: $icon-size;
+    height: $icon-size;
+  }
+}
+.btn-social-google {
+  background: none;
+  border: none;
+  padding: 10px 15px 10px 15px;
+  background-color: $icon-color-google;
+  color: white;
+  border-radius: 35px;
+  width: $button-length;
+  &:focus {
+    outline: none;
+  }
+  img {
+    width: $icon-size-google;
+    height: $icon-size-google;
+  }
+}

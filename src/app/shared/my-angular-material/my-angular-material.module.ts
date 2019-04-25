@@ -1,11 +1,14 @@
-import { CustomerComponent } from './../../customer/customer/customer.component';
 import { NgModule } from '@angular/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule, MatInputModule, DateAdapter, MatNativeDateModule} from '@angular/material';
+import {MatFormFieldModule, MatInputModule, MatNativeDateModule} from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -18,7 +21,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatCardModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   exports: [
     MatFormFieldModule,
@@ -28,7 +35,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatCardModule,
     MatAutocompleteModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatRadioModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [
     MatDatepickerModule

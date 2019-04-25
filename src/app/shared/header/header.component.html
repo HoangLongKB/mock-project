@@ -17,8 +17,8 @@
                 <div class="">Account</div>
             </div>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item class="clear-button">Sign In</button>
-              <button mat-menu-item class="clear-button">Sign Up</button>
+              <button (click)="openDialog()" mat-menu-item class="clear-button">Sign In <mat-icon>exit_to_app</mat-icon></button>
+              <button mat-menu-item class="clear-button">Sign Up <mat-icon>person_add</mat-icon></button>
             </mat-menu>
           </div>
         </div>

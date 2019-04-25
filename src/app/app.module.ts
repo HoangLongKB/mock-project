@@ -12,7 +12,9 @@ import { LoginComponent } from './authentication/login/login.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { LoginDialogComponent } from './shared/dialogs/login/login-dialog.component';
 import { MyAngularMaterialModule } from './shared/my-angular-material/my-angular-material.module';
+import { SocialDialogContentComponent } from './shared/dialogs/social-dialog-content/social-dialog-content.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MyAngularMaterialModule } from './shared/my-angular-material/my-angular
     LoginComponent,
     NotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginDialogComponent,
+    SocialDialogContentComponent
   ],
   imports: [
     FormsModule,
@@ -34,6 +38,9 @@ import { MyAngularMaterialModule } from './shared/my-angular-material/my-angular
     MyAngularMaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    LoginDialogComponent
+  ]
 })
 export class AppModule { }
