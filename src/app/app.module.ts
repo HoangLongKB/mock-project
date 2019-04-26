@@ -15,6 +15,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginDialogComponent } from './shared/dialogs/login/login-dialog.component';
 import { MyAngularMaterialModule } from './shared/my-angular-material/my-angular-material.module';
 import { SocialDialogContentComponent } from './shared/dialogs/social-dialog-content/social-dialog-content.component';
+import { SignupComponent } from './shared/dialogs/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { SocialDialogContentComponent } from './shared/dialogs/social-dialog-con
     HeaderComponent,
     FooterComponent,
     LoginDialogComponent,
-    SocialDialogContentComponent
+    SocialDialogContentComponent,
+    SignupComponent
   ],
   imports: [
     FormsModule,

@@ -10,7 +10,7 @@ $button-length: 70%;
   background-color: $icon-color-facebook;
   color: white;
   border-radius: 35px;
-  width: $button-length;
+  // width: $button-length;
   &:focus {
     outline: none;
   }
@@ -26,7 +26,7 @@ $button-length: 70%;
   background-color: $icon-color-google;
   color: white;
   border-radius: 35px;
-  width: $button-length;
+  // width: $button-length;
   &:focus {
     outline: none;
   }

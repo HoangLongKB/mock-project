@@ -3,17 +3,17 @@
     <div class="row justify-content-center">
       <form [formGroup]="busRoutes" (ngSubmit)="onSubmit(busRoutes)" class="col-md-8 my-5">
         <div class="row radio-section justify-content-end">
-            <mat-radio-group formControlName="type" class="radio-container col-md-4 row">
-                <div class="col-md-6">
+            <mat-radio-group formControlName="type" class="radio-container col-md-6 col-xl-5 row">
+                <div class="col-md-6 col-sm-5 col-5">
                   <mat-radio-button  class="my-3" value="1" id="oneWay" checked>One Way</mat-radio-button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 col-sm-5 col-5">
                   <mat-radio-button class="my-3" value="2" id="twoWay">Two Way</mat-radio-button>
                 </div>
               </mat-radio-group>
         </div>
         <div formGroupName="places" class="row pt-3 place-section">
-          <div class="col-md-5 input-from">
+          <div class="col-lg-5 col-md-12 col-12 input-from">
             <div class="row justify-content-center">
               <label class="from-icon">
                   <mat-icon>place</mat-icon>
@@ -31,10 +31,10 @@
                 </mat-form-field>
             </div>
           </div>
-          <div class="col-md-2 d-flex flex-row justify-content-center align-items-center">
+          <div class="col-lg-2 col-md-12 col-12 button-rotate d-flex flex-row justify-content-center align-items-center">
             <mat-icon class="rotate-icon" (click)="rotateFromTo()">autorenew</mat-icon>
           </div>
-          <div class="col-md-5 input-to">
+          <div class="col-lg-5 col-md-12 col-12 input-to">
               <div class="row justify-content-center">
                   <label class="to-icon">
                       <mat-icon>place</mat-icon>
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div formGroupName="date" class="row date-picker-section">
-          <div class="col-md-6 date-picker-depart py-3 d-flex justify-content-around">
+          <div class="col-lg-6 col-md-12 date-picker-depart py-3 d-flex justify-content-around">
               <label for="" class="align-self-center m-0">Departure Date</label>
               <mat-form-field>
                   <input
@@ -70,7 +70,7 @@
                 </mat-form-field>
                 <mat-icon class="align-self-center calendar-icon" (click)="picker.open()">calendar_today</mat-icon>
           </div>
-          <div class="col-md-6 date-picker-depart py-3 d-flex justify-content-around">
+          <div class="col-lg-6 col-md-12 date-picker-depart py-3 d-flex justify-content-around">
               <label for="" class="align-self-center m-0">Return Date</label>
               <mat-form-field>
                   <input
@@ -92,11 +92,6 @@
             FIND BUS</button>
         </div>
       </form>
-      <!-- SNACK BAR SHOW DUPPICATE PLACE -->
-      <!-- <mat-form-field>
-          <mat-label>From Place and To Place must be difference ! </mat-label>
-        </mat-form-field> -->
-      <!-- SNACK BAR SHOW DUPPICATE PLACE-----END -->
     </div>
   </div>
 </div>

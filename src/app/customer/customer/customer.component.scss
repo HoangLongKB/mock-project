@@ -129,3 +129,28 @@
 /deep/ .my-snack .mat-simple-snackbar-action {
   color: #18aa4f;
 }
+
+@media only screen and (max-width: 576px) {
+  .input-from {
+    padding-bottom: none;
+  }
+  .input-to {
+
+
+  }
+  .button-rotate {
+    margin: 2% auto 10% auto;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .input-from {
+    padding-bottom: none;
+  }
+  .input-to {
+
+
+  }
+  .button-rotate {
+    margin: 0 auto 7% auto;
+  }
+}
