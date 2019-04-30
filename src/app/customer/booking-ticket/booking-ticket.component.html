@@ -1,0 +1,117 @@
+<div class="main-body container">
+  <div class="row tag-nav text-center my-3 mx-0">
+    <div
+      class="col-lg-3  d-flex flex-row align-items-center justify-content-center"
+      [ngClass]="{ 'tag-active': isTagActive == 1, tag: isTagActive != 1 }"
+    >
+      <p class="my-0">CHOOSE ROUTE</p>
+    </div>
+    <div
+      class="col-lg-3  d-flex flex-row align-items-center justify-content-center"
+      [ngClass]="{ 'tag-active': isTagActive == 2, tag: isTagActive != 2 }"
+    >
+      <p class="my-0">CHOOSE SEATS</p>
+    </div>
+    <div
+      class="col-lg-3  d-flex flex-row align-items-center justify-content-center"
+      [ngClass]="{ 'tag-active': isTagActive == 3, tag: isTagActive != 3 }"
+    >
+      <p class="my-0">CUSTOMER INFOMATION</p>
+    </div>
+    <div
+      class="col-lg-3 d-flex flex-row align-items-center justify-content-center"
+      [ngClass]="{ 'tag-active': isTagActive == 4, tag: isTagActive != 4 }"
+    >
+      <p class="my-0">PAYMENT</p>
+    </div>
+  </div>
+  <div class="row main-section">
+    <div class="col-lg-4 info-section">
+      <div class="row justify-content-center">
+        <h6 class="main-color ">CHÂU ĐỐC - CẦN THƠ 02-05-2019</h6>
+      </div>
+      <div class="row">
+        <p style="font-weight: 550;">Route choosen</p>
+      </div>
+      <div class="row d-flex flex-row justify-content-between">
+        <mat-icon class="main-color">directions_bus</mat-icon>
+        <span>Chau Doc ==> Can Tho</span>
+        <span class="ml-auto">100.000đ</span>
+      </div>
+      <div class="row justify-content-center mt-5">
+        <h6 class="main-color ">TRIP INFOMATION</h6>
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="row">
+            <mat-icon class="main-color">directions_bus</mat-icon>
+            <p style="font-weight: 550;">Daparture</p>
+          </div>
+        </div>
+        <div class="col-lg-1">
+          <div class=""></div>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+      <div class="row reparture-info">
+        <div class="col-lg-7 d-flex flex-column justify-content-start">
+          <span>02-05-2019</span>
+          <span>04:00</span>
+        </div>
+        <div class="col-lg-1">
+          <div class="first"></div>
+        </div>
+        <div class="col-lg-4 d-flex flex-column justify-content-start">
+          <span>Châu Đốc</span>
+          <span>Chau Doc</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="row mt-5">
+            <mat-icon class="main-color">directions_bus</mat-icon>
+            <p style="font-weight: 550;">Arrive</p>
+          </div>
+        </div>
+        <div class="col-lg-1">
+          <div class="mid"></div>
+        </div>
+        <div class="col-lg-4"></div>
+      </div>
+      <div class="row reparture-info">
+        <div class="col-lg-7 d-flex flex-column justify-content-start">
+          <span>02-05-2019</span>
+          <span>07:00</span>
+        </div>
+        <div class="col-lg-1">
+          <div class="second"></div>
+        </div>
+        <div class="col-lg-4 d-flex flex-column justify-content-start">
+          <span>Cần Thơ</span>
+          <span>Can Tho</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 seat-section">
+      <div class="row border-bot">
+        <div>
+          <span><strong>CHOOSEN SEATS: </strong></span>
+          <span>empty</span>
+        </div>
+        <div class="ml-auto">
+          <span><strong>TOTAL PRICE: </strong></span>
+          <span class="main-color">{{ totalPrice }}đ</span>
+        </div>
+      </div>
+      <div class="row border-bot">
+        <div class="mx-auto main-color mt-3 mb-1">
+          <span><strong>SEATS DIAGRAM</strong></span>
+        </div>
+      </div>
+      <div class="row">
+        <div *ngFor="let seat of seats" class="col-lg-3 py-3"><div (click)="addSelectedSeat(seat)" [ngClass]="{'seat-served': seat.status, 'seat': !seat.status, 'seat-selected' : checkChoosenSeats(seat.number)}" class="mx-auto d-flex flex-row justify-content-center align-items-center">{{seat.number}}</div></div>
+
+      </div>
+    </div>
+  </div>
+</div>

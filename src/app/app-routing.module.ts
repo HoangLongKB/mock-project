@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CustomerComponent } from './customer/customer/customer.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { BookingTicketComponent } from './customer/booking-ticket/booking-ticket.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'index',
     component: CustomerComponent,
+  },
+  {
+    path: 'booking-ticket',
+    component: BookingTicketComponent,
   },
   {
     path: 'seller',
