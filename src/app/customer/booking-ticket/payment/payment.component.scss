@@ -1,0 +1,47 @@
+$main_green: #18aa4f;
+$main_grey: #D7D7D7;
+$second_grey: #ccc;
+.main-color {
+  color: $main_green;
+}
+.border-bot {
+  border-bottom: 1px solid $main_grey;
+}
+.method-section {
+  border: 1px solid $main_grey;
+  padding: 3%;
+}
+.info-section {
+  border: 1px solid $main_grey;
+  padding: 3%;
+}
+.method-box {
+  border: 1px dashed grey;
+}
+.button-next {
+  width: 100%;
+  border-radius: 0px;
+}
+.button-back {
+  width: 100%;
+  border: none;
+  border-radius: 0px;
+  background-color: $main_grey;
+}
+/deep/ .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #18aa4f;
+}
+
+/deep/ .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #18aa4f;
+}
+/deep/ .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color: rgba(24, 170, 79, 0.26) !important;
+}
+/deep/ .my-snack {
+  background-color: white;
+  color: #ef233c;
+}
+/deep/ .my-snack .mat-simple-snackbar-action {
+  color: #18aa4f;
+}

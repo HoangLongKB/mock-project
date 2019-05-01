@@ -1,3 +1,55 @@
-<p>
-  payment works!
-</p>
+<div class="row d-flex flex-row justify-content-between">
+  <div class="col-lg-5 method-section">
+    <div class="main-color row justify-content-center">
+      <h6><strong>PAYMENT METHOD</strong></h6>
+    </div>
+    <div class="row my-3 d-flex flex-row justify-content-around">
+      <div class="col-lg-4 method-box d-flex flex-column justify-content-center align-items-center">
+        <p>Pay via Visa</p>
+        <img src="assets/images/payment/visa-method.png" width="100px" alt="visa method logo">
+        <mat-radio-button checked value="visa"></mat-radio-button>
+      </div>
+      <div class="col-lg-4 method-box d-flex flex-column justify-content-center align-items-center">
+        <p>Pay via Cash</p>
+        <mat-radio-button value="cash"></mat-radio-button>
+      </div>
+    </div>
+    <div class="row">
+      <button routerLink="/index" class="btn btn-success button-next">Choose this Method</button>
+    </div>
+  </div>
+  <div class="col-lg-6 info-section">
+    <div class="main-color row justify-content-center">
+      <h6><strong>TICKET INFOMATION</strong></h6>
+    </div>
+    <div class="row border-bot my-3">
+        <div class="col-lg-2">Route:</div>
+        <div class="col-lg-5">Chau Doc ==> Can Tho</div>
+    </div>
+    <div class="row border-bot my-3">
+      <div class="col-lg-2">Departure: </div>
+      <div class="col-lg-5">03-05-2019</div>
+      <div class="col-lg-2">Seats: </div>
+      <div class="col-lg-2">11</div>
+    </div>
+    <div class="row border-bot my-3">
+      <div class="col-lg-2">Full name: </div>
+      <div class="col-lg-5">Le Hoang Long</div>
+      <div class="col-lg-2">Birth Day: </div>
+      <div class="col-lg-2">05-03-1995</div>
+    </div>
+    <div class="row border-bot my-3">
+      <div class="col-lg-2">Email: </div>
+      <div class="col-lg-5">hoanglongwork@gmail.com</div>
+      <div class="col-lg-2">Phone: </div>
+      <div class="col-lg-2">0916083853</div>
+    </div>
+    <div class="row my-3 justify-content-center">
+      <div class="col-lg-3">Total Price: </div>
+      <div class="col-lg-3" style="color: red"><strong>999.999 đ</strong></div>
+    </div>
+    <div class="row">
+      <button (click)="goBack()" class="btn btn-danger button-back">Back</button>
+    </div>
+  </div>
+</div>

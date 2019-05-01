@@ -1,3 +1,5 @@
+import { ShareDataService } from './../../services/share-data.service';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private location: Location,
+    private shareDataService: ShareDataService
+    ) { }
 
   ngOnInit() {
+  }
+
+  goBack() {
+    this.location.back();
+    this.shareDataService.setCurrentTag(3);
   }
 
 }

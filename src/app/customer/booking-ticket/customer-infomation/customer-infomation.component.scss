@@ -1,0 +1,27 @@
+$main_green: #18aa4f;
+$main_grey: #D7D7D7;
+$second_grey: #ccc;
+.section {
+  border: 1px solid $main_grey;
+  padding: 3%;
+}
+.main-color {
+  color: $main_green;
+}
+.full-field > * {
+  width: 90% !important;
+}
+.full-field-100 {
+  width: 100% !important;
+}
+.my-button {
+  border-radius: 0;
+}
+/deep/ .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+  background-color: $main_green !important; /* Red background for example */
+}
+/deep/ .mat-ripple-element {
+  background-color: rgba(24, 170, 79, 0.26) !important;
+}
+
+

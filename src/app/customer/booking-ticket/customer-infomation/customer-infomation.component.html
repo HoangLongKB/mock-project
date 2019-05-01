@@ -1,3 +1,104 @@
-<p>
-  customer-infomation works!
-</p>
+<div class="row d-flex flex-row justify-content-between">
+  <div class="col-lg-6 section info-section">
+    <div class="row justify-content-center main-color">
+      <h5>CUSTOMER INFOMATION</h5>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="full-field row d-flex flex-column align-items-start">
+          <span><strong>Full Name <span style="color: red"> *</span></strong></span>
+          <mat-form-field floatLabel="never">
+            <input matInput placeholder="example: Le Hoang Long" />
+          </mat-form-field>
+        </div>
+        <div class="full-field row d-flex flex-column align-items-start">
+          <span><strong>Email <span style="color: red"> *</span></strong></span>
+          <mat-form-field floatLabel="never">
+            <input matInput placeholder="example: example@gmail.com" />
+          </mat-form-field>
+        </div>
+        <div class="full-field row d-flex flex-column align-items-start">
+          <span><strong>Phone <span style="color: red"> *</span></strong></span>
+          <mat-form-field floatLabel="never">
+            <input matInput placeholder="example: 0916083853" />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-lg-6 full-field">
+        <div class="full-field-100 row d-flex flex-column align-items-start">
+          <span><strong>Address <span style="color: red"> *</span></strong></span>
+          <mat-form-field floatLabel="never">
+            <textarea
+              matInput
+              placeholder="example: 5/2c Binh Duong City"
+            ></textarea>
+          </mat-form-field>
+        </div>
+        <div class="full-field-100 row d-flex flex-column align-items-start">
+          <span><strong>Birth Day <span style="color: red"> *</span></strong></span>
+          <mat-form-field floatLabel="never">
+            <input
+              matInput
+              [matDatepicker]="picker"
+              placeholder="Choose your Birth Day"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row d-flex flex-row justify-content-start align-items-center">
+        <mat-checkbox>I accept all terms of Busy</mat-checkbox>
+    </div>
+    <div class="row d-flex flex-row justify-content-start my-4">
+        <div class="col-lg-4 px-0">
+          <button
+            (click)="goBack()"
+            class="btn btn-secondary my-button w-100 px-0 d-flex flex-row justify-content-center align-items-center"
+          >
+            <mat-icon>navigate_before</mat-icon>
+            BACK
+          </button>
+        </div>
+        <div class="col-lg-4 px-0 ml-2">
+          <button
+            routerLink="/booking-ticket/payment"
+            (click)="changeNextTag()"
+            class="btn btn-success my-button w-100 px-0 d-flex flex-row justify-content-center align-items-center"
+          >
+            NEXT
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </div>
+      </div>
+  </div>
+  <div class="col-lg-5 section term-section">
+    <div class="main-color row justify-content-center">
+      <h5>TERM & NOTICE</h5>
+    </div>
+    <div class="row justify-content-center">
+      <p>
+        (*) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas unde
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <p>
+        (*) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas unde
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <p>
+        (*) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas unde
+      </p>
+    </div>
+    <div class="row justify-content-center">
+      <p>
+        (*) Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas unde
+      </p>
+    </div>
+  </div>
+</div>

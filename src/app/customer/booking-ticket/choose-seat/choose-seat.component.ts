@@ -8,11 +8,11 @@ import { ShareDataService } from '../../services/share-data.service';
 })
 export class ChooseSeatComponent implements OnInit {
 
-  private totalPrice = 0;
-  private choosenSeatList = '';
-  private choosenSeats = [];
-  private choosenSeatsNumber = [];
-  private seats = [
+   totalPrice = 0;
+   choosenSeatList = '';
+   choosenSeats = [];
+   choosenSeatsNumber = [];
+   seats = [
     {
       number: 1,
       status: true,

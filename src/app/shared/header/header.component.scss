@@ -8,6 +8,7 @@ $main_green: #18aa4f;
 .top-header {
   border-bottom: 1px solid #eee;
   .login-button{
+    color: black;
     &:hover {
       color: $main_green;
       cursor: pointer;
