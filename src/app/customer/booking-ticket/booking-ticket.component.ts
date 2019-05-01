@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { setTNodeAndViewData } from '@angular/core/src/render3/state';
+import { ShareDataService } from '../services/share-data.service';
 
 @Component({
   selector: 'app-booking-ticket',
@@ -7,9 +8,11 @@ import { setTNodeAndViewData } from '@angular/core/src/render3/state';
   styleUrls: ['./booking-ticket.component.scss']
 })
 export class BookingTicketComponent implements OnInit {
-  private isTagActive = 2;
+  private isTagActive = 1;
   private totalPrice = 0;
+  private choosenSeatList = '';
   private choosenSeats = [];
+  private choosenSeatsNumber = [];
   private seats = [
     {
       number: 1,
@@ -107,10 +110,22 @@ export class BookingTicketComponent implements OnInit {
       price: 100000
     }
   ];
-  constructor() { }
+  constructor(private shareDateService: ShareDataService) {
+    this.shareDateService.getCurrentTag().subscribe(
+      tagNumber => {
+        this.isTagActive = tagNumber;
+      }
+    );
+  }
   ngOnInit() {
+    this.choosenSeats.forEach(
+      seat => {
+        this.choosenSeatsNumber.push(seat.number);
+      }
+    );
   }
   addSelectedSeat(selectedSeat){
+
     const flag =  this.choosenSeats.some(seat => {
       return seat.number == selectedSeat.number;
     });
@@ -119,12 +134,31 @@ export class BookingTicketComponent implements OnInit {
         return item.number != selectedSeat.number;
       });
       this.totalPrice -= selectedSeat.price;
+      this.popChoosenSeatList(selectedSeat.number);
     } else {
       this.choosenSeats.push(selectedSeat);
       this.totalPrice += selectedSeat.price;
+      this.pushChoosenSeatList(selectedSeat.number);
     }
     console.log(JSON.stringify(this.choosenSeats));
+
   }
+
+  popChoosenSeatList(seatNumber) {
+    this.choosenSeatsNumber = this.choosenSeatsNumber.filter(
+      seat => {
+        return seat != seatNumber;
+      }
+    );
+    this.choosenSeatList = '';
+    this.choosenSeatList = this.choosenSeatsNumber.join(',');
+  }
+  pushChoosenSeatList(seatNumber) {
+    this.choosenSeatsNumber.push(seatNumber);
+    this.choosenSeatList = '';
+    this.choosenSeatList = this.choosenSeatsNumber.join(',');
+  }
+
   checkChoosenSeats(number) {
     return this.choosenSeats.some(seat => {
       return seat.number == number;
