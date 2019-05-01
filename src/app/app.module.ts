@@ -17,6 +17,9 @@ import { MyAngularMaterialModule } from './shared/my-angular-material/my-angular
 import { SocialDialogContentComponent } from './shared/dialogs/social-dialog-content/social-dialog-content.component';
 import { SignupComponent } from './shared/dialogs/signup/signup.component';
 import { BookingTicketComponent } from './customer/booking-ticket/booking-ticket.component';
+import { ChooseSeatComponent } from './customer/booking-ticket/choose-seat/choose-seat.component';
+import { CustomerInfomationComponent } from './customer/booking-ticket/customer-infomation/customer-infomation.component';
+import { PaymentComponent } from './customer/booking-ticket/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { BookingTicketComponent } from './customer/booking-ticket/booking-ticket
     LoginDialogComponent,
     SocialDialogContentComponent,
     SignupComponent,
-    BookingTicketComponent
+    BookingTicketComponent,
+    ChooseSeatComponent,
+    CustomerInfomationComponent,
+    PaymentComponent
   ],
   imports: [
     FormsModule,

@@ -2,14 +2,6 @@ $main_green: #18aa4f;
 $main_grey: #D7D7D7;
 $second_grey: #ccc;
 .main-body {
-  .border-bot {
-    border-bottom: 1px solid $main_grey;
-  }
-  .main-color{
-    color: $main_green;
-  }
-  .tag.nav {
-  }
   .tag {
     background-color: $main_grey;
     height: 50px;
@@ -70,75 +62,6 @@ $second_grey: #ccc;
       top: 0;
       left: 0;
       z-index: 99;
-    }
-  }
-  .info-section {
-    border: 1px solid $main_grey;
-    padding: 2%;
-    .first {
-      height: 100%;
-      width: 2px;
-      border: 1px solid $main_green;
-      position: relative;
-      &:before {
-        content: '';
-        background: $main_green;
-        height: 20px;
-        width: 20px;
-        position: absolute;
-        border: 1xp solid $main_green;
-        border-radius: 50%;
-        top: -10px;
-        right: -10px;
-        z-index: 99;
-      }
-    }
-    .mid {
-      height: 100%;
-      width: 2px;
-      border: 1px solid $main_green;
-      position: relative;
-    }
-    .second {
-      height: 100%;
-      width: 2px;
-      border: 1px solid $main_green;
-      position: relative;
-      &:before {
-        content: '';
-        background: $main_green;
-        height: 20px;
-        width: 20px;
-        position: absolute;
-        border: 1xp solid $main_green;
-        border-radius: 50%;
-        bottom: -10px;
-        right: -10px;
-        z-index: 99;
-      }
-    }
-  }
-  .seat-section {
-    border: 1px solid $main_grey;
-    padding: 2% !important;
-    .seat {
-      width: 50px;
-      height: 50px;
-      border: 2px solid $second_grey;
-    }
-    .seat-served {
-      width: 50px;
-      height: 50px;
-      border: 2px solid $second_grey;
-      background-color: $second_grey;
-      color: white;
-    }
-    .seat-selected {
-      width: 50px;
-      height: 50px;
-      border: 2px solid $main_green;
-      background-color: $main_green;
-      color: white;
     }
   }
 }
