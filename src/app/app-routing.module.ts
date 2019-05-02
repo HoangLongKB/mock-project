@@ -8,6 +8,9 @@ import { CustomerComponent } from './customer/customer/customer.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { BookingTicketComponent } from './customer/booking-ticket/booking-ticket.component';
 import { PaymentComponent } from './customer/booking-ticket/payment/payment.component';
+import { CustomerWrapperComponent } from './customer-wrapper/customer-wrapper.component';
+import { TicketsSellerComponent } from './seller/tickets-seller/tickets-seller.component';
+import { SeatsSellerComponent } from './seller/seats-seller/seats-seller.component';
 
 const routes: Routes = [
   {
@@ -17,29 +20,50 @@ const routes: Routes = [
   },
   {
     path: 'index',
-    component: CustomerComponent,
-  },
-  {
-    path: 'booking-ticket',
-    component: BookingTicketComponent,
+    component: CustomerWrapperComponent,
     children: [
       {
         path: '',
-        component: ChooseSeatComponent
+        component: CustomerComponent
       },
       {
-        path: 'customer-info',
-        component: CustomerInfomationComponent
-      },
-      {
-        path: 'payment',
-        component: PaymentComponent
+        path: 'booking-ticket',
+        component: BookingTicketComponent,
+        children: [
+          {
+            path: '',
+            component: ChooseSeatComponent
+          },
+          {
+            path: 'customer-info',
+            component: CustomerInfomationComponent
+          },
+          {
+            path: 'payment',
+            component: PaymentComponent
+          }
+        ]
       }
     ]
   },
   {
     path: 'seller',
-    component: SellerComponent
+    component: SellerComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'tickets-management',
+        pathMatch: 'full'
+      },
+      {
+        path: 'tickets-management',
+        component: TicketsSellerComponent
+      },
+      {
+        path: 'seats-management',
+        component: SeatsSellerComponent
+      }
+    ]
   },
   {
     path: 'admin',

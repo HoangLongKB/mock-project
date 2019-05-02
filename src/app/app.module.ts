@@ -20,6 +20,9 @@ import { BookingTicketComponent } from './customer/booking-ticket/booking-ticket
 import { ChooseSeatComponent } from './customer/booking-ticket/choose-seat/choose-seat.component';
 import { CustomerInfomationComponent } from './customer/booking-ticket/customer-infomation/customer-infomation.component';
 import { PaymentComponent } from './customer/booking-ticket/payment/payment.component';
+import { CustomerWrapperComponent } from './customer-wrapper/customer-wrapper.component';
+import { TicketsSellerComponent } from './seller/tickets-seller/tickets-seller.component';
+import { SeatsSellerComponent } from './seller/seats-seller/seats-seller.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { PaymentComponent } from './customer/booking-ticket/payment/payment.comp
     BookingTicketComponent,
     ChooseSeatComponent,
     CustomerInfomationComponent,
-    PaymentComponent
+    PaymentComponent,
+    CustomerWrapperComponent,
+    TicketsSellerComponent,
+    SeatsSellerComponent
   ],
   imports: [
     FormsModule,

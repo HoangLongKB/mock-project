@@ -1,32 +1,23 @@
 $main_green: #18aa4f;
 $main_grey: #D7D7D7;
 $second_grey: #ccc;
-.side-menu-container {
-  width: 100%;
-  height: 100vh;
+.bus-form-container {
+  border: 1px solid $main_grey;
+  padding: 2%;
 }
-.side-menu {
-  height: 100%;
-  width: 15%;
-  background-color: $main_green;
-}
-.side-menu-content {
-  height: 100%;
+.bus-form {
   width: 100%;
 }
-.toolbar {
-  background-color: $main_green;
+.full-field {
+  width: 100%;
 }
-.menu-icon {
-  color: white;
-}
-.button-menu {
+.button-green {
   display: inline-block;
   border: none;
-  border-bottom: 2px solid $main_green;
   padding: 1rem 2rem;
   margin: 0;
-  width: 100%;
+  width: 80%;
+  height: 80%;
   text-decoration: none;
   background: $main_green;
   color: white;
@@ -41,5 +32,4 @@ $second_grey: #ccc;
 button:hover,
 button:focus {
   background: rgb(04,200,89);
-  border-bottom: 2px solid white;
 }
